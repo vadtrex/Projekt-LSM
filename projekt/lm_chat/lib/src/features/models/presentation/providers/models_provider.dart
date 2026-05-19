@@ -171,7 +171,10 @@ class ModelsNotifier extends StateNotifier<ModelsState> {
     _cancelTokens[name] = cancelToken;
 
     try {
-      await FlutterGemma.installModel(modelType: resolveModelType(name))
+      await FlutterGemma.installModel(
+            modelType: resolveModelType(name),
+            fileType: resolveModelFileType(downloadUrl),
+          )
           .fromNetwork(
             downloadUrl,
             token: requiresHuggingFaceToken ? token : null,

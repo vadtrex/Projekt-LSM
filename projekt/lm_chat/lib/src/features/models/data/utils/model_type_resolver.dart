@@ -12,3 +12,13 @@ ModelType resolveModelType(String modelName) {
   if (normalized.contains('functiongemma')) return ModelType.functionGemma;
   return ModelType.gemmaIt;
 }
+
+// Funkcja do mapowania rozszerzenia pliku na typ obsługiwany przez flutter_gemma.
+ModelFileType resolveModelFileType(String downloadUrl) {
+  final path = Uri.parse(downloadUrl).path.toLowerCase();
+  if (path.endsWith('.litertlm')) return ModelFileType.litertlm;
+  if (path.endsWith('.bin') || path.endsWith('.tflite')) {
+    return ModelFileType.binary;
+  }
+  return ModelFileType.task;
+}

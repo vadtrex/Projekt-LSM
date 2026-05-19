@@ -4,6 +4,8 @@ import 'dart:typed_data';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_gemma/flutter_gemma.dart';
 
+import '../../../models/data/utils/model_type_resolver.dart';
+
 // Serwis inferencji LLM, który zarządza modelem, czatem i kontekstem.
 class LlmInferenceService {
   InferenceModel? _inferenceModel;
@@ -40,18 +42,12 @@ class LlmInferenceService {
     await releaseContext();
 
     final isMultimodal = multimodal && !kIsWeb;
+    final modelFileType = resolveModelFileType(downloadUrl);
 
-    final modelFileName = Uri.parse(downloadUrl).pathSegments.last;
-    final isAlreadyInstalled = await FlutterGemma.isModelInstalled(
-      modelFileName,
-    );
-
-    if (!isAlreadyInstalled) {
-      // Model nie jest zainstalowany, pobieramy i instalujemy go
-      await FlutterGemma.installModel(
-        modelType: modelType,
-      ).fromNetwork(downloadUrl, token: huggingFaceToken).install();
-    }
+    await FlutterGemma.installModel(
+      modelType: modelType,
+      fileType: modelFileType,
+    ).fromNetwork(downloadUrl, token: huggingFaceToken).install();
 
     // Inicjalizacja modelu
     _inferenceModel = await FlutterGemma.getActiveModel(
