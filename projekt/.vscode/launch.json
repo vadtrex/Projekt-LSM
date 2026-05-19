@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "lm_chat (Web)",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "./lm_chat",
+      "args": [
+        "-d",
+        "chrome",
+        "--web-port=8080",
+        "--web-browser-flag=--js-flags=--max-old-space-size=8192",
+        "--web-browser-flag=--enable-features=WebGPU",
+        "--web-browser-flag=--enable-webgpu-developer-features",
+      ],
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "lm_chat (Windows)",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "./lm_chat",
+      "args": [
+        "-d",
+        "windows"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+--- lib/src/features/chat/data/datasources/llm_inference_service.dart
++++ lib/src/features/chat/data/datasources/llm_inference_service.dart
+@@ -62,6 +62,7 @@
+         emitLoadProgress: onLoadProgress != null,
+         nCtx: 2048,
+         nGpuLayers: 99, // Użyj GPU jeśli jest dostępne
++        useMlock: false, // very important on iOS/macOS sandbox
+       );
