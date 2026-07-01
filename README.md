@@ -2,7 +2,7 @@
 
 ![Demo aplikacji](app_recording.gif)
 
-[▶ Obejrzyj demo w wyższej jakości](app_recording.mp4)
+[Pobierz demo w wyższej jakości (Plik MP4)](app_recording.mp4)
 
 ## Opis projektu
 
