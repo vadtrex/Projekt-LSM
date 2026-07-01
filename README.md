@@ -2,6 +2,8 @@
 
 ![Demo aplikacji](app_recording.gif)
 
+[▶ Obejrzyj demo w wyższej jakości](app_recording.mp4)
+
 ## Opis projektu
 
 Projekt to wieloplatformowa aplikacja mobilna i desktopowa napisana we **Flutterze**, umożliwiająca prowadzenie konwersacji z dużymi modelami językowymi (**LLM**) działającymi w pełni lokalnie na urządzeniu użytkownika. Inferencja odbywa się bez połączenia z internetem dzięki bibliotece **flutter_gemma** (opartej o MediaPipe LLM Inference API). Aplikacja obsługuje **6 modeli** z rodzin Qwen i Gemma, w tym warianty multimodalne (tekst i obraz).
