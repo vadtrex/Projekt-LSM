@@ -1,6 +1,6 @@
 # LM Chat - Lokalny czat z modelami LLM (PL)
 
-<video controls src="app_recording.mp4" title="LM Chat demo"></video>
+![Demo aplikacji](app_recording.gif)
 
 ## Opis projektu
 
